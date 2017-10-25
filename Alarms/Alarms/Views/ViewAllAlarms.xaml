@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Alarms.Views.ViewAllAlarms">
+
+    <StackLayout VerticalOptions="Start">
+        
+        <ListView x:Name="listAlarms" ItemTapped="OnSelected">
+            
+        <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Spacing="3" HorizontalOptions="Start">
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Hour: "  FontSize="16" TextColor="Red"/>
+                                <Label x:Name="Hour"  
+                                    Text="{Binding Hour}"  
+                                    FontSize="16"  
+                                    TextColor="Red"/>
+                            </StackLayout>
+
+
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Minute: "  FontSize="16" TextColor="Red"/>
+                                <Label x:Name="Minute"  
+                                    Text="{Binding Minute}"  
+                                    FontSize="16"  
+                                    TextColor="Red"/>
+
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button x:Name="Btn_DeleteUsers" Text="Delete All Alarms" Clicked="DeleteAllAlarms"/>
+    </StackLayout>
+
+
+</ContentPage>
